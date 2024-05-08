@@ -12,6 +12,7 @@ body {
     align-items: center;
     background-color: black;
     padding: 5px;
+    height: 8%;
 }
 
 .navbar-paragraph {
@@ -40,5 +41,29 @@ body {
 
 .home-visible {
     display:flex;
-    height:75%;
+    height: 92%
+}
+
+.about-visible {
+    display:flex;
+    height: 92%;
+    width:98.5%;
+}
+
+.contact-visible {
+    display:flex;
+    height: 92%;
+    width:98.5%;
+}
+
+.home-not-visible {
+    display:none;
+}
+
+.about-not-visible {
+    display:none;
+}
+
+.contact-not-visible {
+    display:none;
 }
