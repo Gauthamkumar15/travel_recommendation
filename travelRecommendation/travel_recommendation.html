@@ -17,11 +17,11 @@
             <a style = "margin:5px;cursor:pointer;" onclick="turnAboutOn()">About Us</a>
             <a style = "margin:5px;cursor:pointer;" onclick="turnContactOn()">Contact Us</a>  
         </div>
-        <div style = "display:flex; background-color:white;border-radius:15px;padding:10px;margin:5px;align-items: center;">
-            <input style = "border:none;margin-right:5px;width:200px;outline:none;" placeholder = "Enter a destination or keyword" type = "text" >
+        <div id = "search" style = "display:flex; background-color:white;border-radius:15px;padding:10px;margin:5px;align-items: center;">
+            <input id = "searchTerm" style = "border:none;margin-right:5px;width:200px;outline:none;" placeholder = "Enter a destination or keyword" type = "text" onkeyup="changeSearchTerm();">
             <svg style = "height:15px;width:15px;margin-right:10px;color:green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#027577" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-            <button style = "margin-right:5px;background-color:#027577;border-radius:5px;border:none;color:white;padding: 5px;cursor:pointer;font-style: italic;">Search</button>
-            <button style = "background-color:#027577;border-radius:5px;border:none;color:white;padding: 5px;cursor:pointer;font-style: italic;">Clear</button>
+            <button style = "margin-right:5px;background-color:#027577;border-radius:5px;border:none;color:white;padding: 5px;cursor:pointer;font-style: italic;" onclick="fetchData()">Search</button>
+            <button style = "background-color:#027577;border-radius:5px;border:none;color:white;padding: 5px;cursor:pointer;font-style: italic;" onclick = "clearSearch()">Clear</button>
         </div>
     </div>
     <div style = "height: 92%;display: flex;">
@@ -40,6 +40,9 @@
                 <h1>EXPLORE<br/>DREAM <br/>DESTINATION</h1>
                 <p>"Welcome to our website, your passport to unparalleled adventures! Embark on a journey of discovery with us as we unlock the world's most captivating destinations. From hidden gems to iconic landmarks, our platform is your gateway to endless exploration. Join us and let the adventure begin!"</p>
                 <button style = "width:100px;background-color:#027577;border-radius:5px;border:none;color:white;padding: 5px;cursor:pointer;font-style: italic;margin-top:5px">BOOK NOW</button>
+            </div>
+            <div style="margin-right: 100px;overflow: auto;" id = "recommendedDiv">
+                
             </div>
         </div>
         <div id = "about" class="about-visible">
@@ -79,11 +82,11 @@
                 <div style="background-color: rgba(0, 0, 0, 0.5);height: 400px;width: 400px;padding: 15px;">
                     <form style="width: 100%;">
                         <label style="color:white;font-size:25px;" for="name">Name</label><br>
-                        <input style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 30px;margin-bottom: 15px" type="text" id="fname"><br>
+                        <input style="color:white;background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 30px;margin-bottom: 15px" type="text" id="name"><br>
                         <label style="color:white;font-size:25px;" for="email">Email</label><br>
-                        <input style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 30px;margin-bottom: 15px" type="text" id="email"><br/>
+                        <input style="color:white;background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 30px;margin-bottom: 15px" type="text" id="email"><br/>
                         <label style="color:white;font-size:25px;" for="message">Message</label><br>
-                        <textarea style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 120px;margin-bottom: 15px" id="message"></textarea>
+                        <textarea style="color:white;background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 5px;width: 100%;height: 120px;margin-bottom: 15px" id="message"></textarea>
                         <input style="background-color:#027577;color: white;width: 100%;border: none;padding: 5px;border-radius: 10px;cursor: pointer;" type="submit" onclick="submitForm(event)">
                       </form>
                 </div>

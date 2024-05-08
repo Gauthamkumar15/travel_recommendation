@@ -39,9 +39,14 @@ body {
     height:50%;
 }
 
+.search-not-visible {
+    display: none !important;
+}
+
 .home-visible {
     display:flex;
-    height: 92%
+    height: 92%;
+    justify-content: space-between;
 }
 
 .about-visible {
