@@ -27,4 +27,18 @@ body {
 
 ::placeholder {
     color: #027577;
-  }
+    font-style: italic;
+}
+
+.vertical {
+    border-left: 2px solid black;
+    height: 200px;
+    margin-left: 15px;
+    margin-top: 15px;
+    height:50%;
+}
+
+.home-visible {
+    display:flex;
+    height:75%;
+}
