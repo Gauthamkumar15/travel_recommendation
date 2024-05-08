@@ -24,3 +24,7 @@ body {
     color: #ffffff;
     font-style: italic;
 }
+
+::placeholder {
+    color: #027577;
+  }
